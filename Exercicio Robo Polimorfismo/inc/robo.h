@@ -15,7 +15,7 @@ class RoboTerrestre : public MobileRobot
 {
     public:
         RoboTerrestre(double X, double Y);
-        void Mover(double Xvel, double Yvel, double tempo);
+        void Mover(double Xvel, double Yvel, double Zvel, double tempo);
 };
 
 class Quadrotor : public MobileRobot

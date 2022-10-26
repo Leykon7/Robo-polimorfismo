@@ -53,7 +53,7 @@ RoboTerrestre::RoboTerrestre(double X, double Y)
     this->setPosicaoAtual(X,Y,0);
 }
 
-void RoboTerrestre::Mover(double Xvel, double Yvel, double tempo)
+void RoboTerrestre::Mover(double Xvel, double Yvel, double Zvel, double tempo)
 {
     cout<<"Acionando rodas..."<<endl<<endl;
     cout<<"Posicao anterior: "<<endl;
