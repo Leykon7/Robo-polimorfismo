@@ -9,16 +9,20 @@ class MobileRobot
         double getPosicaoAtual(char coordenada);
         void setPosicaoAtual(double X, double Y, double Z);
         virtual void Mover(double Xvel, double Yvel, double Zvel, double tempo)=0;     
-}
+};
 
 class RoboTerrestre : public MobileRobot
 {
+    public:
+        RoboTerrestre(double X, double Y);
+        void Mover(double Xvel, double Yvel, double tempo);
+};
 
-}
-
-class Quadrotor : public Quadrotor
-{
-    
-}
+class Quadrotor : public MobileRobot
+{   
+    public:
+        Quadrotor(double X, double Y, double Z);
+        void Mover(double Xvel, double Yvel, double Zvel, double tempo);
+};
 
 #endif
