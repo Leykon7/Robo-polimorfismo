@@ -11,7 +11,7 @@ class MobileRobot
         void setPosicaoAtual(double X, double Y, double Z);
         bool getTipo();
         void setTipo(bool tipo);
-        virtual void Mover(double Xvel, double Yvel, double Zvel, double tempo)=0;     
+        void Mover(double Xvel, double Yvel, double Zvel, double tempo);     
 };
 
 class RoboTerrestre : public MobileRobot

@@ -21,8 +21,9 @@ void ExecutaMovimento(MobileRobot* ptr)
         cout<<"Digite o tempo: ";
         cin>>t;
         ptr->Mover(x,y,z,t);
-        cout<<"Deseja move-lo novamente?(0 - nao | 1 - sim: ";
+        cout<<"Deseja move-lo novamente?(0 - nao | 1 - sim): ";
         cin>>op;
+        cout<<endl<<endl;
     }
     
     
