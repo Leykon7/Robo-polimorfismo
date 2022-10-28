@@ -3,6 +3,23 @@
 
 using namespace std;
 
+bool MobileRobot::getTipo()
+{
+    if (this->tipo)
+    {
+        return true;
+    }
+    else
+    {
+        return false;   
+    }
+}
+
+void MobileRobot::setTipo(bool tipoEntrada)
+{
+    this->tipo = tipoEntrada;
+}
+
 double MobileRobot::getPosicaoAtual(char coordenada)
 {
     if(coordenada == 'X')
@@ -48,8 +65,9 @@ void MobileRobot::setPosicaoAtual(double X, double Y, double Z)
     }
 }
 
-RoboTerrestre::RoboTerrestre(double X, double Y)
+RoboTerrestre::RoboTerrestre(double X, double Y, bool tipoEntrada)
 {
+    this->setTipo(tipoEntrada);
     this->setPosicaoAtual(X,Y,0);
 }
 
@@ -67,23 +85,24 @@ void RoboTerrestre::Mover(double Xvel, double Yvel, double Zvel, double tempo)
     cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl<<endl;
 }
 
-Quadrotor::Quadrotor(double X, double Y, double Z)
+Quadrotor::Quadrotor(double X, double Y, double Z, bool tipoEntrada)
 {
+    this->setTipo(tipoEntrada);
     this->setPosicaoAtual(X,Y,Z);
 }
 
 void Quadrotor::Mover(double Xvel, double Yvel, double Zvel, double tempo)
 {
-    cout<<"Acionando hélices..."<<endl<<endl;
+    cout<<"Acionando helices..."<<endl<<endl;
     cout<<"Posicao anterior: "<<endl;
     cout<<"X: "<<this->getPosicaoAtual('X')<<endl;
-    cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl<<endl;
+    cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl;
     cout<<"Z: "<<this->getPosicaoAtual('Z')<<endl<<endl;
 
     this->setPosicaoAtual((getPosicaoAtual('X')+Xvel*tempo), (this->getPosicaoAtual('Y')+Yvel*tempo), (this->getPosicaoAtual('Z')+Zvel*tempo));
 
     cout<<"Posicao atual: "<<endl;
     cout<<"X: "<<this->getPosicaoAtual('X')<<endl;
-    cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl<<endl;
+    cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl;
     cout<<"Z: "<<this->getPosicaoAtual('Z')<<endl<<endl;
 }

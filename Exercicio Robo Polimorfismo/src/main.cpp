@@ -10,8 +10,11 @@ void ExecutaMovimento(MobileRobot* ptr)
     cin>>x;
     cout<<"Digite a velocidade em Y: ";
     cin>>y;
-    cout<<"Digite a velocidade em Z: ";
-    cin>>z;
+    if (ptr->getTipo())
+    {
+        cout<<"Digite a velocidade em Z: ";
+        cin>>z;
+    }
     cout<<"Digite o tempo: ";
     cin>>t;
     ptr->Mover(x,y,z,t);
@@ -19,9 +22,10 @@ void ExecutaMovimento(MobileRobot* ptr)
 
 int main()
 {
-    RoboTerrestre r1(10, 10);
-    Quadrotor q1(0, 0, 0);
+    RoboTerrestre r1(10, 10, false);
+    Quadrotor q1(0, 0, 0, true);
     MobileRobot* armazenaRobo[2] = {&q1, &r1};
     ExecutaMovimento(armazenaRobo[0]);
+    ExecutaMovimento(armazenaRobo[1]);
     return 0;
 }
