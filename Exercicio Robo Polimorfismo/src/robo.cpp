@@ -73,7 +73,7 @@ RoboTerrestre::RoboTerrestre(double X, double Y, bool tipoEntrada)
 
 void RoboTerrestre::Mover(double Xvel, double Yvel, double Zvel, double tempo)
 {
-    cout<<"Acionando rodas..."<<endl<<endl;
+    cout<<"\nAcionando rodas..."<<endl<<endl;
     cout<<"Posicao anterior: "<<endl;
     cout<<"X: "<<this->getPosicaoAtual('X')<<endl;
     cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl<<endl;
@@ -93,7 +93,7 @@ Quadrotor::Quadrotor(double X, double Y, double Z, bool tipoEntrada)
 
 void Quadrotor::Mover(double Xvel, double Yvel, double Zvel, double tempo)
 {
-    cout<<"Acionando helices..."<<endl<<endl;
+    cout<<"\nAcionando helices..."<<endl<<endl;
     cout<<"Posicao anterior: "<<endl;
     cout<<"X: "<<this->getPosicaoAtual('X')<<endl;
     cout<<"Y: "<<this->getPosicaoAtual('Y')<<endl;

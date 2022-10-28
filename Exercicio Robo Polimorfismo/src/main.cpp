@@ -5,19 +5,27 @@ using namespace std;
 
 void ExecutaMovimento(MobileRobot* ptr)
 {
-    double x, y, z, t;
-    cout<<"Digite a velocidade em X: ";
-    cin>>x;
-    cout<<"Digite a velocidade em Y: ";
-    cin>>y;
-    if (ptr->getTipo())
+    bool op = 1;
+    while (op)
     {
-        cout<<"Digite a velocidade em Z: ";
-        cin>>z;
+        double x, y, z, t;
+        cout<<"Digite a velocidade em X: ";
+        cin>>x;
+        cout<<"Digite a velocidade em Y: ";
+        cin>>y;
+        if (ptr->getTipo())
+        {
+            cout<<"Digite a velocidade em Z: ";
+            cin>>z;
+        }
+        cout<<"Digite o tempo: ";
+        cin>>t;
+        ptr->Mover(x,y,z,t);
+        cout<<"Deseja move-lo novamente?(0 - nao | 1 - sim: ";
+        cin>>op;
     }
-    cout<<"Digite o tempo: ";
-    cin>>t;
-    ptr->Mover(x,y,z,t);
+    
+    
 }
 
 int main()
