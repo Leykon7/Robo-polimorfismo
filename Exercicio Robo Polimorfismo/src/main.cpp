@@ -34,7 +34,9 @@ int main()
     RoboTerrestre r1(10, 10, false);
     Quadrotor q1(0, 0, 0, true);
     MobileRobot* armazenaRobo[2] = {&q1, &r1};
+    cout<<"\n\n-------Quadrotor--------\n\n";
     ExecutaMovimento(armazenaRobo[0]);
+    cout<<"\n\n-------Robo Terrestre--------\n\n";
     ExecutaMovimento(armazenaRobo[1]);
     return 0;
 }
